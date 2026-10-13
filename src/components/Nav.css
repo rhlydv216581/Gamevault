@@ -1,0 +1,113 @@
+.Nav {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+  min-height: 4rem;
+  padding: 0rem 0.5rem;
+  color: whitesmoke;
+  flex-wrap: wrap;
+}
+.Nav .searhbar {
+  display: none;
+}
+.Nav .logo {
+  display: flex;
+  align-items: center;
+}
+.Nav .logo .logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  text-decoration: none;
+  color: whitesmoke;
+}
+.Nav .logo img {
+  width: 5rem;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.Nav .logo span {
+  white-space: nowrap;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.Nav .logo .active {
+  color: #a0ddf1;
+}
+.Nav .link {
+  display: none;
+}
+.Nav .link.show {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  justify-content: space-around;
+}
+.Nav .link.show a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+.Nav .link.show .active {
+  color: #a0ddf1;
+}
+.Nav .link.show {
+  width: 100%;
+}
+.Nav .menu-icon {
+  width: 2.5rem;
+  height: 35px;
+  stroke-width: 2.5;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.Nav .menu-icon:hover {
+  transform: scale(1.15);
+  color: #a0ddf1;
+}
+
+@media (min-width: 1024px) {
+  .Nav {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+  .Nav .searhbar {
+    display: block;
+    color: white;
+  }
+  .Nav .searhbar input {
+    width: 250px;
+    padding: 0.65rem 1rem;
+    border: 1px solid #444;
+    border-radius: 12px;
+    background-color: #1c1c1c;
+    color: whitesmoke;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .Nav .link,
+  .Nav .link.show {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    width: auto;
+  }
+  .Nav .link a,
+  .Nav .link.show a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+  .Nav .link .active,
+  .Nav .link.show .active {
+    color: #a0ddf1;
+  }
+}/*# sourceMappingURL=Nav.css.map */
