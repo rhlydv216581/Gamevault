@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {apidatastore} from '../Context/Apigame'
+const gameapidata =  useContext(apidatastore)
+
 
 const Gamevault = () => {
+  // console.log(gameapidata);
+  
   return (
-    <div>
-      gamevalut 
+    <div className='gamevault'>
+      <div className="image">
+
+      </div>
+
     </div>
   )
 }

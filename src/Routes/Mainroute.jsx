@@ -2,7 +2,7 @@ import {Route, Routes} from 'react-router-dom'
 import  Gamevault from '../Page/Gamevault'
 import  Fav from '../Page/Fav'
 import  Library from '../Page/Library'
-import  Store from '../Page/Store'
+import  Store from '../Page/Storesss'
 const Mainroute = () => {
   return (
     <Routes>
