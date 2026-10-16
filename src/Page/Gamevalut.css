@@ -1,0 +1,29 @@
+.gamevalut {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.gamevalut .information {
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 20vh;
+  font-size: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.gamevalut .information .informationwriting {
+  text-align: left;
+  width: 50%;
+}
+.gamevalut .information .informationbutton {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.gamevalut {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}/*# sourceMappingURL=Gamevalut.css.map */

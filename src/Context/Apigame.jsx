@@ -6,10 +6,8 @@ const Apigame = ({children}) => {
 
   const getgame = async () => {
     try {
-      const request = await axios.get("&page_size=5");
+      const request = await axios.get("&page_size=15");
       setapidatastore(request.data.results)
-
-
     } catch (error) {
       console.log(error);
       

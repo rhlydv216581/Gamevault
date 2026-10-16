@@ -2,5 +2,11 @@
 height: 100%;
 width: 100%;
 color: whitesmoke; 
+display: flex;
+flex-direction: column;
+gap: 2rem
+;
+padding: 0.5rem;
+/* background:  whitesmoke; */
 /* background: red; */
 }

@@ -1,0 +1,11 @@
+.button {
+  width: 8rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-align: center;
+  color: white; /* Text color */
+  padding: 10px 20px; /* Space inside the button */
+  border: none; /* Remove default border */
+  border-radius: 0.7rem; /* Rounded corners */
+  cursor: pointer;
+}/*# sourceMappingURL=Button.css.map */
