@@ -1,6 +1,6 @@
 .button{
-    width: 8rem;
-    font-size: 1.4rem;
+    width: 10rem;
+    font-size: 1.2rem;
     font-weight: 800;
     text-align: center;
     //  background-color: #a0ddf1; /* Button color */
@@ -8,5 +8,25 @@
   padding: 10px 20px;        /* Space inside the button */
   border: none;              /* Remove default border */
   border-radius: 0.7rem;       /* Rounded corners */
-  cursor: pointer;    
+  cursor: pointer; 
+ display: flex;
+ gap: 0.5rem;
+ justify-content: center;
+ align-items: center;
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  svg {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+}
+}
+.button:hover {
+  transform: translateY(-4px); /* Lifts the button up */
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.7); /* Adds a colored glow */
+}
+
+/* Optional Active State (when clicked) */
+.button:active {
+  transform: translateY(-1px); /* Pushes it back down slightly */
+  box-shadow: 0 5px 10px rgba(37, 99, 235, 0.4);
 }

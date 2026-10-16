@@ -14,16 +14,54 @@
 }
 .gamevalut .information .informationwriting {
   text-align: left;
-  width: 50%;
-}
-.gamevalut .information .informationbutton {
+  padding: 0rem 0.5rem;
   width: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: end;
+}
+.gamevalut .information .informationbutton {
+  width: 50%;
+  padding: 0rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
   align-items: flex-end;
 }
 .gamevalut {
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 1024px) {
+  .gamevalut {
+    height: 100vh;
+    background: size 100%;
+    background-repeat: no-repeat;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 2rem;
+  }
+  .gamevalut .informationwriting {
+    font-size: 1.6rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 1rem;
+    width: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .gamevalut .informationwriting:hover {
+    transform: translateY(-4px); /* Lifts the button up */
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.7); /* Adds a colored glow */
+  }
+  .gamevalut .informationbutton {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 50%;
+  }
 }/*# sourceMappingURL=Gamevalut.css.map */

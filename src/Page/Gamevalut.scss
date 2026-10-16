@@ -3,6 +3,7 @@
     width: 100%;
     display: flex;
  align-items: flex-end;
+//  background: red;
     // object-fit:contain;
     //phale 100 pura width aur secoun 100 pura height
     .information{
@@ -20,14 +21,19 @@
         gap: 1rem;
         .informationwriting{
             text-align: left;
+            padding: 0rem 0.5rem;
             width: 50%;
-           
+               display: flex;
+               flex-direction: column;
+           justify-content: end;
         }
         .informationbutton{
         // align-items: end;
             width: 50%;
+            padding: 0rem 0.5rem;
           display: flex;
         flex-direction: column;
+        justify-content: end;
         align-items: flex-end;
           
            }
@@ -37,4 +43,42 @@
         background-position: center;
         background-repeat: no-repeat;
     
+}
+@media (min-width: 1024px) {
+    .gamevalut {
+        height: 100vh;
+        background: size 100%;
+        background-repeat: no-repeat;
+        margin: auto;
+        padding: 1rem;
+        border-radius: 2rem;
+        // gap: 2rem;
+
+        .informationwriting{
+            font-size: 1.6rem;
+            padding: 2rem;
+            display:flex;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 1rem;
+            // align-items: center;
+            width: 50%;
+              transition: transform 0.2s ease, box-shadow 0.2s ease;
+            // background: #000; 
+            &:hover {
+  transform: translateY(-4px); /* Lifts the button up */
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.7); /* Adds a colored glow */
+}   
+
+        }
+        .informationbutton{
+             padding: 2rem;
+            display:flex;
+            justify-content: center;
+            flex-direction: row;
+            // align-items: center;
+            width: 50%;
+        }
+        // background: red;
+    }
 }

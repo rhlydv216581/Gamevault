@@ -1,7 +1,9 @@
 import  { useContext } from 'react'
 import "./Gamevalut.scss"
 import {gameapi } from '../Context/Apigame';
-import Button from '../components/Button'
+import Button from '../components/Button';
+import { ShoppingCartMinus } from 'lucide-react';
+import { HeartMinus } from 'lucide-react';
 const Gamevault = () => {
   let gamedata = useContext(gameapi)
   
@@ -9,9 +11,11 @@ const randomGamedisply = gamedata[Math.floor(Math.random() * gamedata.length)];
   // console.log("game data",gamedata);
    console.log("game data", randomGamedisply);
   return (
-    <div className="gamevalut"  style={{
+    <div className="gamevalut"  
+    style={{
     backgroundImage: `url(${randomGamedisply?.background_image})`,
-  }} >
+  }}
+   >
   <div className="information">
 
     <div className="informationwriting">
@@ -24,8 +28,8 @@ const randomGamedisply = gamedata[Math.floor(Math.random() * gamedata.length)];
       
     </div>
     <div className="informationbutton">
-       <Button title="Shop"  style={{ backgroundColor: "#48cae4" }} />
-       <Button title="Add to favoures"   />
+       <Button title="Shop" icone = { <ShoppingCartMinus />}  style={{ backgroundColor: "#48cae4" }} />
+       <Button title="Add to favoures"  icone = { <HeartMinus />}  />
       </div>
   </div>
     </div>
