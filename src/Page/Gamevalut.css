@@ -1,10 +1,15 @@
+@charset "UTF-8";
 .gamevalut {
-  height: 50vh;
+  min-height: 50vh;
   width: 100%;
   display: flex;
   align-items: flex-end;
+  border-radius: 1.5rem;
+  padding-bottom: 0.8rem;
+  color: #C0C0C0;
 }
 .gamevalut .information {
+  margin-top: auto;
   flex-wrap: nowrap;
   width: 100%;
   height: 20vh;
@@ -34,9 +39,147 @@
   background-repeat: no-repeat;
 }
 
+.mibble {
+  overflow: visible;
+  width: 100%;
+  height: auto;
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.mibble .aboutgame {
+  padding: 1rem;
+  background: rgba(44, 43, 43, 0.5);
+  color: whitesmoke;
+  border-radius: 2rem;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+}
+.mibble .aboutgame .top {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+.mibble .aboutgame .top h1 {
+  font-size: 1.8rem;
+  color: #C0C0C0;
+  margin: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.mibble .aboutgame .top svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  color: #00bfff;
+}
+.mibble .playerreview {
+  width: 100%;
+  background: rgba(0, 191, 255, 0.2);
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+.mibble .playerreview .review-card {
+  width: 100%;
+  height: auto;
+}
+.mibble .playerreview .review-card .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.2rem;
+}
+.mibble .playerreview .review-card .top h1 {
+  color: #a0ddf1;
+}
+.mibble .playerreview .review-card .rating-row {
+  display: grid;
+  grid-template-columns: minmax(65px, 90px) minmax(0, 1fr) 48px 55px;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1rem 0;
+  min-width: 0;
+  font-size: 1rem;
+}
+.mibble .playerreview .review-card .rating-row .rating-title {
+  text-transform: capitalize;
+  color: #d5deed;
+  overflow-wrap: anywhere;
+}
+.mibble .playerreview .review-card .rating-row .bar {
+  width: 100%;
+  min-width: 0;
+  height: 10px;
+  background: #a0ddf1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.mibble .playerreview .review-card .rating-row .bar .bar-fill {
+  height: 100%;
+  background: #168bff;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+.mibble .playerreview .review-card .rating-row .rating-percent,
+.mibble .playerreview .review-card .rating-row .rating-count {
+  text-align: right;
+  color: #91a0b8;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.moreinformation {
+  width: 100%;
+  min-height: 20vh;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  overflow-x: scroll;
+  flex-direction: row;
+  gap: 1.5rem;
+  scroll-snap-type: x mandatory;
+}
+.moreinformation .box {
+  height: 100%;
+  min-width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.photo {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Heading upar, gallery niche */
+  gap: 1rem;
+  margin-bottom: 2rem; /* Thoda space niche */
+}
+.photo h1 {
+  text-align: center;
+  margin: 0;
+  color: #3b82f6; /* ✅ Heading ka Blue colour (Tailwind blue-500) */
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.Footer {
+  width: 100%;
+  height: 100%;
+}
+
 @media (min-width: 1024px) {
+  .gamevalut::-webkit-scrollbar {
+    display: none;
+  }
   .gamevalut {
-    height: 100vh;
+    min-height: 100vh;
     background: size 100%;
     background-repeat: no-repeat;
     margin: auto;
@@ -63,5 +206,31 @@
     justify-content: center;
     flex-direction: row;
     width: 50%;
+  }
+  .mibble {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .mibble .playerreview {
+    width: 50%;
+    padding: 1rem;
+  }
+  .moreinformation {
+    padding: 2rem;
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    background: gray;
+  }
+  .photo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    color: #00bfff;
+    align-items: center;
   }
 }/*# sourceMappingURL=Gamevalut.css.map */

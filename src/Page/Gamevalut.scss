@@ -1,12 +1,18 @@
 .gamevalut{
-    height: 50vh;
+    min-height: 50vh;
     width: 100%;
     display: flex;
+    // flex-direction: column;
  align-items: flex-end;
+ border-radius: 1.5rem;
+ padding-bottom: 0.8rem;
+ color: #C0C0C0;
 //  background: red;
     // object-fit:contain;
     //phale 100 pura width aur secoun 100 pura height
     .information{
+        margin-top: auto;
+        // color: #C0C0C0;
         // padding-bottom: 0.7rem;
         // overflow-x: hidden;
         flex-wrap: nowrap;
@@ -25,6 +31,7 @@
             width: 50%;
                display: flex;
                flex-direction: column;
+            //    color: #aba6a6;
            justify-content: end;
         }
         .informationbutton{
@@ -43,10 +50,167 @@
         background-position: center;
         background-repeat: no-repeat;
     
+    }
+.mibble {
+     overflow: visible;
+    width: 100%;
+    height: auto;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    // margin-bottom: 2rem;
+    gap: 1rem;
+    .aboutgame {
+        padding: 1rem;
+        background: rgba(44, 43, 43, 0.5);
+        color: whitesmoke;
+        border-radius: 2rem;
+        font-size: 1.3rem;
+        line-height: 1.2;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        width: 100%;
+
+        .top {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: center;
+
+            h1 {
+                font-size: 1.8rem;
+                color: #C0C0C0;
+                margin: 0;
+                white-space: normal;
+                overflow-wrap: anywhere;
+            }
+
+            svg {
+                width: 2.5rem;
+                height: 2.5rem;
+                flex-shrink: 0;
+                color: #00bfff;
+            }
+        }
+    }
+    .playerreview{
+       
+        width: 100%;
+        background:rgb(0, 191, 255,0.2);
+   padding: 0.5rem;
+//    margin: auto;
+   border-radius: 1rem;
+   .review-card{
+
+    width: 100%;
+    height: auto;
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 1.2rem;
+        h1{
+            color: #a0ddf1;
+        }
+    }
+     .rating-row {
+    display: grid;
+    grid-template-columns: minmax(65px, 90px) minmax(0, 1fr) 48px 55px;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1rem 0;
+    min-width: 0;
+    font-size: 1rem;
+
+    .rating-title {
+      text-transform: capitalize;
+      color: #d5deed;
+      overflow-wrap: anywhere;
+    }
+
+    .bar {
+      width: 100%;
+      min-width: 0;
+      height: 10px;
+      background: #a0ddf1;
+      border-radius: 10px;
+      overflow: hidden;
+
+      .bar-fill {
+        height: 100%;
+        background: #168bff;
+        border-radius: 10px;
+        transition: width 0.4s ease;
+      }
+    }
+
+    .rating-percent,
+    .rating-count {
+      text-align: right;
+      color: #91a0b8;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+}
+    }
+
+}
+}
+// .moreinformation{
+//     width: 100%;
+//     // background: red;
+//     height: 25vh;
+// }
+.moreinformation {
+  width: 100%;
+  min-height: 20vh;
+  height: auto;
+//   padding: 2rem;
+  box-sizing: border-box;
+display: flex;
+overflow-x: scroll;
+flex-direction: row;
+gap: 1.5rem;
+  scroll-snap-type: x mandatory;
+.box{
+    height: 100%;
+    min-width: 100%;
+     scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+}
+.photo {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Heading upar, gallery niche */
+  gap: 1rem; 
+  margin-bottom: 2rem; /* Thoda space niche */
+
+  h1 {
+    text-align: center;
+    margin: 0;
+    color: #3b82f6; /* ✅ Heading ka Blue colour (Tailwind blue-500) */
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+}
+
+
+.Footer{
+    width: 100%;
+    height: 100%;
 }
 @media (min-width: 1024px) {
     .gamevalut {
-        height: 100vh;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        min-height: 100vh;
         background: size 100%;
         background-repeat: no-repeat;
         margin: auto;
@@ -80,5 +244,35 @@
             width: 50%;
         }
         // background: red;
+    }
+    .mibble{
+        height: auto;
+        width: 100%;
+        // height: 10rem;
+        display: flex;
+        flex-direction: row;
+        .playerreview{
+            width: 50%;
+            
+            padding: 1rem;
+            
+        }
+    }
+    .moreinformation{
+      padding: 2rem;
+  width: 100%;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  background: gray;
+//   box-sizing: border-box;
+    }
+    .photo{
+        width: 100%;
+        display: flex;
+  flex-direction: row;
+  color: #00bfff;
+        align-items: center;
     }
 }
