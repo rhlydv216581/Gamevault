@@ -123,7 +123,7 @@ console.log(media);
   />
 
   <Button
-      onClick={() => navigate("/Fav")}
+      onClick={() => navigate("/Library")}
     title="Explore favourites"
     icone={<HeartMinus />}
   />

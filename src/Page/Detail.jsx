@@ -58,7 +58,7 @@ const Detail = () => {
     console.log("API error:", error.response?.data || error.message);
   }
 };
- console.log("ye video ",getyoutubevideo);
+//  console.log("ye video ",getyoutubevideo);
  
   
 //  useEffect(() => {
