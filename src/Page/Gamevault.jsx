@@ -1,5 +1,6 @@
-import  { useContext } from 'react'
+import  { useContext, useEffect, useState } from 'react'
 import "./Gamevalut.scss"
+
 import {gameapi } from '../Context/Apigame';
 import Button from '../components/Button';
 import Boxgamevault from '../components/Boxgamevault'
@@ -9,20 +10,53 @@ import { Gamepad2 } from 'lucide-react';
 import { HeartMinus } from 'lucide-react';
 import Media from '../components/Media';
 import { MonitorSmartphone } from 'lucide-react';
-
+import Axios from '../utility/Axios'
 // import { Bookmark } from 'lucide-react';
 import { UserGroup } from 'lucide-react';
 import Footer from '../components/Footer'
+import { useNavigate } from 'react-router-dom';
+// import axios from 'axios';
 const Gamevault = () => {
-  let gamedata = useContext(gameapi)
+  const navigate = useNavigate()
+  const [desprection, setdesprection] = useState([])
+  // export const id = randomGamedisply?.id;
+  const { apidatastore } = useContext(gameapi);
+  // const randomGamedisply =  gamedata[4];
+  console.log("ye gamevalut",apidatastore);
   
-const randomGamedisply = gamedata[Math.floor(Math.random() * gamedata.length)];
-  // console.log("game data",gamedata);
-   console.log("game data", randomGamedisply);
+  const randomGamedisply =  apidatastore[Math.floor(Math.random() * apidatastore.length)] ;
+  console.log("ye randomdata",randomGamedisply);
+  
+// console.log("https://api.rawg.io/api/games/12020/movies?key=ec81cd95eecd4503b6a93d6001c82694");
+
+// console.log("game data",gamedata);
+   console.log("game data hai ", randomGamedisply);
+    console.log("game data hai ki id  ", randomGamedisply?.id);
     console.log("yeplatform",randomGamedisply?.platforms)
-  console.log("yeplatform",randomGamedisply?.platforms.map((item)=> (
-    item.platform.name
+    console.log("yeplatform",randomGamedisply?.platforms.map((item)=> (
+      item.platform.name
   )));
+
+   const getdespection = async () => {
+
+    try {
+      console.log("Full game data:", randomGamedisply);
+console.log("Game ID:", randomGamedisply?.id);
+      const response = await Axios.get(`games/${randomGamedisply?.id}`
+        );
+        console.log("ye id derahai ",randomGamedisply?.id);
+        // const responsevideo =  await Axios.get(`games/${randomGamedisply?.id}/movies`
+        // );
+       setdesprection(response.data.description_raw)
+      // console.log("ye video",responsevideo)
+      
+    } catch (error) {
+       console.log(error);
+    }
+
+  }
+
+  
   const platforminformation = randomGamedisply?.platforms.map((item)=> (
     item.platform.name
   )).join(" , ");;
@@ -33,12 +67,19 @@ const randomGamedisply = gamedata[Math.floor(Math.random() * gamedata.length)];
     item.name
   )));
 
+  // const derpection = response.data.description_raw
   // console.log("numberplayer",randomGamedisply?.playtime);
 const media = randomGamedisply?.short_screenshots.map((item)=>(item.image))
 console.log(media);
 
   const playingtime = randomGamedisply?.playtime; 
   // console.log("generes",genresinformation);
+  useEffect(() => {
+      // if (!randomGamedisply?.id) return; 
+    getdespection()
+  
+  }, [])
+  console.log("ye video ka hai data ----------------------",getdespection);
   
   return (
     <>
@@ -51,6 +92,19 @@ console.log(media);
 
     <div className="informationwriting">
 
+{/*   
+<video
+  controls
+  width="640"
+  poster="https://media.rawg.io/media/games/..."
+>
+  <source
+    src="https://steamcdn-a.akamaihd.net/steam/apps/256693661/movie480.mp4"
+    type="video/mp4"
+  />
+  Your browser does not support video playback.
+</video> */}
+
      <h1>{randomGamedisply?.name }</h1>   
     
       {/* <img src={randomGamedisply?.background_image} alt="" /> */}
@@ -60,19 +114,30 @@ console.log(media);
       
     </div>
     <div className="informationbutton">
-       <Button title="Shop" icone = { <ShoppingCartMinus />}  style={{ backgroundColor: "#48cae4" }} />
-       <Button title="Add to favoures"  icone = { <HeartMinus />}  />
+     <div className="informationbutton">
+  <Button
+    title="Shop"
+      onClick={() => navigate("/Fav")}
+    icone={<ShoppingCartMinus />}
+    style={{ backgroundColor: "#48cae4" }}
+  />
+
+  <Button
+      onClick={() => navigate("/Fav")}
+    title="Explore favourites"
+    icone={<HeartMinus />}
+  />
+</div>
       </div>
   </div>
     </div>
-    <div className="mibble">
+    
+    <div className="mibble" >
     <div className="aboutgame">
 <div className="top">
- <h1>  <ScrollText className='title'  /> About VideoGame </h1>
+ <h1>  <ScrollText className='title'  /> {randomGamedisply?.name} </h1>
 </div>
- <h4>Video games are a popular form of entertainment. They are fun to play and come in many types, such as racing games, adventure games, puzzle games, and action games. Popular games include Minecraft, Roblox, Free Fire, and GTA. Video games can help improve creativity, thinking skills, and problem-solving abilities.</h4>
-<h4>
-Many people enjoy playing video games with their friends and family. Some games also help players learn new things and work as a team. However, we should play games for a limited time and take regular breaks. We should also balance gaming with studies, exercise, and other outdoor activities.</h4>
+ <h4>{desprection}</h4>
     
     </div>
   <div className="playerreview">

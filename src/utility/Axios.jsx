@@ -1,13 +1,18 @@
 import axios from 'axios';
 const instance = axios.create({
-    baseURL : "https://api.rawg.io/api/games?",
+    baseURL : "https://api.rawg.io/api",
      params: {
-    key: "ec81cd95eecd4503b6a93d6001c82694"
+     key: import.meta.env.VITE_RAWIO_API_KEY,
+    page_size: 10,
   }
 });
+
+
+
  instance.interceptors.request.use(
   function (config) {
-    console.log(config);
+    console.log("ye axios ",config);
+   
     return config;
     
   },

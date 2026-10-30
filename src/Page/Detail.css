@@ -1,0 +1,315 @@
+.detailpage {
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #080b0d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.detailpage .page-layout {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 30rem;
+  border-radius: 2rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  margin-bottom: 9rem;
+}
+.detailpage .page-layout::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(to bottom, transparent 35%, rgba(8, 11, 13, 0.6) 65%, #080b0d 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.detailpage .page-layout .smallimage {
+  position: absolute;
+  z-index: 2;
+  left: 1rem;
+  bottom: -7rem;
+  width: calc(100% - 2rem);
+  color: white;
+}
+.detailpage .page-layout .smallimage .game-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.detailpage .page-layout .smallimage .cover-image {
+  flex: 0 0 7.5rem;
+  width: 7.5rem;
+  height: 10.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+}
+.detailpage .page-layout .smallimage .information {
+  flex: 1;
+  min-width: 0;
+}
+.detailpage .page-layout .smallimage .information h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+}
+.detailpage .page-layout .smallimage .information .release {
+  color: #a8adb4;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+.detailpage .page-layout .smallimage .information .ratings {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.detailpage .page-layout .smallimage .information .ratings h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.2rem;
+  margin: 0;
+}
+.detailpage .page-layout .smallimage .information .ratings .metacritic {
+  color: #8bc34a;
+}
+.detailpage .page-layout .smallimage .information .ratings .metacritic span {
+  color: #a8adb4;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+.detailpage .page-layout .smallimage .information .genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.detailpage .page-layout .smallimage .information .genres span {
+  padding: 0.6rem 0.9rem;
+  background: #202428;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+}
+.detailpage .price {
+  width: 100%;
+  height: auto;
+}
+.detailpage .gameachiplay {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.detailpage .about {
+  width: 100%;
+  background: #252525;
+  border-radius: 2rem;
+}
+.detailpage .about p {
+  padding: 1rem 1.2rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+.detailpage .video {
+  min-height: 10rem;
+  width: 100%;
+}
+.detailpage .developer {
+  width: 100%;
+}
+.detailpage .developer h1 {
+  text-align: center;
+  color: #8bc34a;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.detailpage .developer .extra-information {
+  width: 100%;
+}
+.detailpage .developer .developers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 100%;
+}
+.detailpage .developer .developer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+}
+.detailpage .developer .developer-item img {
+  width: 4rem;
+  height: 4rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.detailpage .developer .developer-item span {
+  color: #ddd;
+  font-size: 1.6rem;
+  overflow-wrap: anywhere;
+}
+.detailpage .developer .developer-item p {
+  margin: 0;
+  color: #8bc34a;
+  font-size: 1.3rem;
+}
+.detailpage .section {
+  width: 100%;
+  margin-top: 2rem;
+  color: #ddd;
+}
+.detailpage .section h2 {
+  color: #3498ff;
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+}
+.detailpage .section .details-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+}
+.detailpage .section .row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+.detailpage .section .row > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ccc;
+  min-width: 0;
+  font-size: 1.3rem;
+}
+.detailpage .section .row svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #3498ff;
+  flex-shrink: 0;
+}
+.detailpage .section .row > span:nth-child(2) {
+  color: #fff;
+  text-align: right;
+  font-size: 1rem;
+}
+.detailpage .section .row .tags {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.detailpage .section .row .tags .tag {
+  padding: 0.3rem 0.65rem;
+  background: #183653;
+  color: #69b5ff;
+  border: 1px solid #285782;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+}
+.detailpage .game-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+.detailpage .game-links .game-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  background: #101417;
+  border: 1px solid #1c2227;
+  border-radius: 0.6rem;
+  color: #f1f3f5;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+.detailpage .game-links .game-link svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+.detailpage .game-links .game-link svg:first-child {
+  color: #8bd5f5;
+}
+.detailpage .game-links .game-link:hover {
+  background: #191f24;
+}
+.detailpage .game-links .game-link .external-icon {
+  margin-left: auto;
+  color: #c5cbd0;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.detailpage .footer {
+  height: 30%;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .detailpage {
+    min-width: 1024px;
+    padding: 1.5rem 2rem;
+  }
+  .detailpage .page-layout {
+    min-height: 40rem;
+    margin-bottom: 10rem;
+  }
+  .detailpage .page-layout .smallimage {
+    left: 2rem;
+    width: calc(100% - 4rem);
+  }
+  .detailpage .page-layout .smallimage .game-top {
+    gap: 2rem;
+  }
+  .detailpage .page-layout .smallimage .cover-image {
+    width: 10rem;
+    height: 14rem;
+    flex-basis: 10rem;
+  }
+  .detailpage .page-layout .smallimage .information h1 {
+    font-size: 2.5rem;
+  }
+  .detailpage .page-layout .smallimage .information .release {
+    font-size: 1rem;
+  }
+  .detailpage .page-layout .smallimage .information .ratings h2 {
+    font-size: 1.4rem;
+  }
+  .detailpage .page-layout .smallimage .information .genres span {
+    font-size: 1rem;
+  }
+  .detailpage .price {
+    width: 100%;
+  }
+  .detailpage .about p {
+    font-size: 1.3rem;
+  }
+  .detailpage .developers .developer-item {
+    width: calc(50% - 1rem);
+  }
+  .detailpage .game-links .game-link {
+    font-size: 1.1rem;
+  }
+}/*# sourceMappingURL=Detail.css.map */

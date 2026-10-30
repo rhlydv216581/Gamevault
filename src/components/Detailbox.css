@@ -1,0 +1,17 @@
+.smallbox {
+  height: 100%;
+  width: 8rem;
+  display: flex;
+  gap: 0.5rem;
+  background: #000;
+}
+.smallbox svg {
+  height: 2.5rem;
+  width: 2.5rem;
+  color: aquamarine;
+}
+.smallbox h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}/*# sourceMappingURL=Detailbox.css.map */

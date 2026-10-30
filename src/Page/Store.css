@@ -1,0 +1,79 @@
+.storegame {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  height: 100vh;
+}
+.storegame .top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  min-width: 0;
+}
+.storegame .top .topinfor {
+  width: 100%;
+  min-width: 0;
+}
+.storegame .top .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: 3rem;
+  box-sizing: border-box;
+  gap: 1rem;
+  padding: 0 0.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.storegame .top .header::-webkit-scrollbar {
+  display: none;
+}
+.storegame .top .header h1::-webkit-scrollbar {
+  display: none;
+}
+.storegame .top .header h1 {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0.4rem 1rem;
+  color: white;
+  border: 0.125rem solid white;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.storegame .top .header {
+  scrollbar-width: thin;
+}
+
+@media (min-width: 48rem) {
+  .storegame {
+    padding: 1rem 1.5rem;
+  }
+  .storegame .top {
+    gap: 2rem;
+  }
+  .storegame .top .header {
+    gap: 1.25rem;
+  }
+}
+@media (min-width: 64rem) {
+  .storegame {
+    padding: 1.5rem 2rem;
+  }
+  .storegame .top {
+    gap: 2rem;
+  }
+  .storegame .top .topinfor {
+    max-width: 100%;
+  }
+  .storegame .top .header {
+    gap: 1.5rem;
+  }
+}/*# sourceMappingURL=Store.css.map */

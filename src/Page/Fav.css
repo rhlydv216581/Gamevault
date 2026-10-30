@@ -1,0 +1,127 @@
+.fav-games {
+  min-height: 100vh;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 280px));
+  justify-content: center;
+  align-content: start;
+  gap: 24px;
+  background: #080b10;
+}
+
+.game-card {
+  position: relative;
+  width: 100%;
+  height: 485px;
+  overflow: hidden;
+  border: 1px solid #31404a;
+  border-radius: 25px;
+  background-color: #161616;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.game-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 15%, rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0.8) 100%);
+  pointer-events: none;
+}
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.favorite-heart {
+  position: absolute;
+  top: 22px;
+  left: 18px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.favorite-heart svg {
+  width: 34px;
+  height: 34px;
+}
+
+.game-card-content {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 18px 20px;
+  text-align: center;
+}
+.game-card-content h2 {
+  width: 100%;
+  margin: 0;
+  color: #a9eaff;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  text-shadow: 0 2px 5px #000;
+}
+
+.platform-label,
+.platform-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.platform-label svg,
+.platform-list svg {
+  color: #2196f3;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.platform-list {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.view-detail {
+  width: 100%;
+  min-height: 54px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 35px;
+  background: #fff;
+  color: #1685ad;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.view-detail:hover {
+  background: #dff5ff;
+  transform: scale(1.02);
+}
+.view-detail:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .fav-games {
+    grid-template-columns: minmax(0, 280px);
+    padding: 18px 12px;
+  }
+  .game-card {
+    height: 485px;
+  }
+}/*# sourceMappingURL=Fav.css.map */
