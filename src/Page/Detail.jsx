@@ -52,8 +52,7 @@ const Detail = () => {
     // response.data?.contents ue log mai dekhna ek sath 19 video aaya ok tho ye path use kiay 
      const id = response.data?.contents?.[0]?.video?.videoId;
     setVideos(id)
-    console.log("ye youtube video",id
-);
+  
   } catch (error) {
     console.log("API error:", error.response?.data || error.message);
   }
