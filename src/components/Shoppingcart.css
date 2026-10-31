@@ -1,8 +1,7 @@
 .Shopingcart {
-  width: 3.125rem;
-  height: 3.125rem;
-  background-color: #2563eb;
-  color: #ffffff;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: aqua;
   border-radius: 0.75rem;
   display: flex;
   align-items: center;

@@ -11,8 +11,8 @@ const Library = () => {
           JSON.parse(localStorage.getItem('savedGame')) 
       );
       console.log("yelibrary",storeproduc);
-const gamename = storeproduc.map((item)=>(
- item.name
+const gamename = storeproduc?.map((item)=>(
+ item?.name
 ));
 console.log("gamename",gamename);
  const gamelibradata = async () => {
@@ -58,35 +58,41 @@ console.log("ye apicalled ka data stor horahaui ",datastore);
 // </div>
 //       ))}
 //     </div>
-
 <div className="libraray">
-  {datastore.map((item) => (
-    <div className="card" key={item.id} onClick={() => navigate(`/Store/Detail/${item.id}`)} >
-
-      {/* First slide: Background */}
+  {datastore?.length > 0 ? (
+    datastore.map((item) => (
       <div
-        className="hero"
-        style={{
-          backgroundImage: `url("${item?.background_image}")`
-        }}
+        className="card"
+        key={item.id}
+        onClick={() => navigate(`/Store/Detail/${item.id}`)}
       >
-        <div className="game-info">
-          <h1>{item?.name}</h1>
-          <p>Scroll right to view more →</p>
+        <div
+          className="hero"
+          style={{
+            backgroundImage: `url("${item?.background_image}")`
+          }}
+        >
+          <div className="game-info">
+            <h1>{item?.name}</h1>
+            <p>Scroll right to view more →</p>
+          </div>
         </div>
+
+        {item?.short_screenshots?.map((img) => (
+          <div className="screenshot" key={img.id}>
+            <img src={img.image} alt={item.name} />
+          </div>
+        ))}
       </div>
-
-      {/* Next slides: Screenshots */}
-      {item?.short_screenshots?.map((img) => (
-        <div className="screenshot" key={img.id}>
-          <img src={img.image} alt={item.name} />
-        </div>
-      ))}
-
+    ))
+  ) : (
+    <div className="empty-library">
+      <h2>No Products Available</h2>
+      <p>Please buy a product first!</p>
     </div>
-  ))}
+  )}
 </div>
-  )
+)
 }
 
 export default Library
