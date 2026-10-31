@@ -6,7 +6,7 @@ import { Heart } from 'lucide-react';
 import { HeartOff } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-const nextpagenotify = toast.success('Successfully Move Nextpage')
+// const nextpagenotify = toast.success('Successfully Move Nextpage')
 const notify = (message) =>
   toast.success(message, {
     style: {
@@ -97,9 +97,10 @@ updated
           </div>
         ))
       }
-      <button className='nextpage' onClick={() => {
-        nextpagenotify();
-  nextpage();
+      <button className='nextpage'onClick={() => {
+    notify("Successfully Moved to Next Page");
+    nextpage();
+  
 }} >
         nextpage
       </button>
