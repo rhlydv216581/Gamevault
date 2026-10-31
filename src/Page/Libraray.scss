@@ -89,6 +89,7 @@
     }
   }
   .empty-library {
+    text-align: center;
   width: 100%;
   min-height: 300px;
   display: flex;
@@ -121,4 +122,7 @@
   .libraray {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+   .empty-library {
+    text-align: center;
+   }
 }
