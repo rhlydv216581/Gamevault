@@ -88,7 +88,7 @@ console.log("ye apicalled ka data stor horahaui ",datastore);
   ) : (
     <div className="empty-library">
       <h2>No Products Available</h2>
-      <p>Please buy a product first!</p>
+      <p>Please buy a product first! <br/> From Store </p>
     </div>
   )}
 </div>
